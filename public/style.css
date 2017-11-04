@@ -1,0 +1,200 @@
+html, body {
+  padding: 0px;
+  margin: 0px;
+  height: 100%;
+  background: #EFF6FF; }
+
+h1, h2, h3, h4, li, .headerSubTitle, span {
+  letter-spacing: 2px;
+  font-family: 'Montserrat'; }
+
+p, label {
+  font-family: 'Lato'; }
+
+li {
+  list-style-type: none;
+  text-decoration: none; }
+
+a,
+a:visited {
+  color: inherit;
+  text-decoration: none; }
+
+.nav {
+  height: 40%; }
+
+.nav ul {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  -webkit-box-pack: end;
+  -webkit-justify-content: flex-end;
+  -ms-flex-pack: end;
+  justify-content: flex-end;
+  margin: 0px;
+  padding: 0px;
+  color: #fff; }
+  .nav ul li {
+    margin: 20px;
+    font-size: 20px;
+    padding-bottom: 3px; }
+  .nav ul li::after {
+    display: block;
+    background: transparent;
+    -webkit-transition: width .2s ease, background-color .2s ease;
+    -o-transition: width .2s ease, background-color .2s ease;
+    transition: width .2s ease, background-color .2s ease;
+    margin: auto;
+    height: 3px;
+    width: 0px;
+    content: ''; }
+  .nav ul li:hover::after {
+    width: 100%;
+    background: #FC5749; }
+
+.mobNav, .mobNavBtnDiv {
+  display: none; }
+
+.headerBackground {
+  width: 100%;
+  height: 100%;
+  background-image: url(images/landscape.jpg);
+  background-size: cover;
+  background-position: center;
+  border-bottom: 4px solid #FC5749; }
+
+.header {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+  -webkit-align-content: space-between;
+  -ms-flex-line-pack: justify;
+  align-content: space-between;
+  height: 250px; }
+
+.headerTitle {
+  font-weight: bold;
+  font-size: 3em; }
+
+.headerTitle,
+.headerSubTitle {
+  -webkit-animation: FrontScaleIn 400ms linear 1;
+  animation: FrontScaleIn 400ms linear 1;
+  -webkit-animation-fill-mode: forwards;
+  animation-fill-mode: forwards;
+  opacity: 0;
+  text-align: center;
+  color: #fff;
+  margin: 0px; }
+
+.headerSubTitle {
+  font-size: 1.2em; }
+
+.letsWorkBtnDiv {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center; }
+
+.letsWorkBtn {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+  -ms-flex-align: center;
+  align-items: center;
+  text-align: center;
+  background: #FC5749;
+  border-color: transparent;
+  border-radius: 5px;
+  width: 200px;
+  height: 50px;
+  color: #fff;
+  cursor: pointer;
+  -webkit-box-shadow: 0px 3px 6px 0px rgba(0, 0, 0, 0.5);
+  box-shadow: 0px 3px 6px 0px rgba(0, 0, 0, 0.5);
+  -webkit-animation: FrontScaleIn 400ms linear 500ms 1;
+  animation: FrontScaleIn 400ms linear 500ms 1;
+  -webkit-animation-fill-mode: forwards;
+  animation-fill-mode: forwards;
+  opacity: 0;
+  outline: none; }
+  .letsWorkBtn span {
+    color: #fff;
+    font-size: 15px; }
+
+@-webkit-keyframes FrontScaleIn {
+  0% {
+    -webkit-transform: scale(0);
+    transform: scale(0);
+    opacity: 0; }
+  100% {
+    -webkit-transform: scale(1);
+    transform: scale(1);
+    opacity: 1; } }
+
+@keyframes FrontScaleIn {
+  0% {
+    -webkit-transform: scale(0);
+    transform: scale(0);
+    opacity: 0; }
+  100% {
+    -webkit-transform: scale(1);
+    transform: scale(1);
+    opacity: 1; } }
+
+@media (max-width: 600px) {
+  .headerBackground {
+    background-position: right; }
+  .headerTitle {
+    font-size: 2.5em; }
+  .nav, .mobNav {
+    display: none; }
+  .mobNav {
+    background: #fff;
+    position: fixed;
+    top: 15%;
+    z-index: 1;
+    color: #3d3d3d;
+    font-size: 1.5em;
+    width: 100%; }
+  .mobNav ul {
+    margin: 0px;
+    padding: 0px; }
+  .mobNav li {
+    padding: 20px; }
+  .mobNavBtnDiv {
+    display: block;
+    height: 40%; }
+  .mobNavBtn {
+    width: 85px;
+    height: 65px;
+    margin-top: 10px; }
+  .mobNavBtn:hover {
+    cursor: pointer; } }

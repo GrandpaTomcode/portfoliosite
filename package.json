@@ -1,0 +1,19 @@
+{
+  "name": "portfoliosite",
+  "version": "1.0.0",
+  "description": "My Portfolio Site",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/tomOneEightTwo/portfoliosite.git"
+  },
+  "author": "Tom Hornbuckle",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/tomOneEightTwo/portfoliosite/issues"
+  },
+  "homepage": "https://github.com/tomOneEightTwo/portfoliosite#readme"
+}

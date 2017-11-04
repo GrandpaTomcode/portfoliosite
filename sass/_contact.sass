@@ -1,0 +1,106 @@
+// Titles
+.contactCont
+  display: flex
+  flex-direction: column
+  margin: 0 auto
+  background: #fff
+  width: 60%
+  box-shadow: 0px 3px 6px 0px rgba(0,0,0,0.50)
+
+#contactpageTitle
+  text-align: center
+  .border
+    margin: 0 auto
+    width: 350px
+
+.socialMediaTitle
+  .border
+    width: 220px
+
+.contactFormTitle
+  margin-bottom: 20px
+  .border
+    width: 250px
+
+// General
+.contactPageContainer
+  display: flex
+  flex-direction: column
+
+// Icons
+.socialIcons
+  width: 50px
+  height: 50px
+
+.socialMediaLinks
+    display: flex
+    flex-direction: column
+    justify-content: space-around
+    width: 30%
+    margin: 0 auto
+    margin-top: 20px
+    padding: 0px
+
+.socialIconsContainer
+  ul
+    display: flex
+    justify-content: space-around
+    width: 100%
+    text-align: center
+    padding: 0px
+
+// Contact Form
+
+.contactForm
+  display: flex
+  flex-direction: column
+  width: 50%
+  margin: 0 auto
+
+.input
+  display: flex
+  flex-direction: column
+  margin-bottom: 10px
+  border-bottom: 2px solid #bdbdbd
+  label
+    margin-bottom: 10px
+    font-size: 15px
+
+textarea:focus, input:focus
+    outline: none
+
+.inputText, textarea
+  border-style: none
+  background: #eeeeee
+  padding: 15px
+  border-radius: 3px
+
+.input.active
+  border-bottom: 2px solid #FC5749
+
+.submit
+  background: #FC5749
+  border-color: transparent
+  border-radius: 5px
+  width: 100px
+  height: 50px
+  color: #fff
+  font-size: 15px
+  box-shadow: 0px 3px 6px 0px rgba(0,0,0,0.50)
+  cursor: pointer
+
+.submit:active
+  transform: translateY(2px)
+  box-shadow: 0px 3px 6px 0px rgba(0,0,0,0.75)
+
+@include bp(baby-bear)
+  .contactCont
+    width: 100%
+
+  .contactForm,
+  .socialMediaLinks,
+    width: 90%
+
+  .socialIconsContainer
+    ul
+      width: 100%

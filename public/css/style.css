@@ -3,11 +3,11 @@ html, body {
   margin: 0px;
   height: 100%; }
 
-h1, h2, h3, h4, li, .headerSubTitle, span {
+h1, li, .headerSubTitle, span {
   letter-spacing: 2px;
   font-family: 'Montserrat'; }
 
-p, label {
+p, h2, h3, h4, label {
   font-family: 'Lato'; }
 
 li {
@@ -148,6 +148,113 @@ a:visited {
     color: #fff;
     font-size: 15px; }
 
+.aboutContainer {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+  -ms-flex-align: center;
+  align-items: center;
+  width: 100%;
+  background: #FC5749;
+  color: #fff; }
+
+.aboutHeaderContainer {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  margin-top: 20px; }
+
+.aboutHeaderText {
+  margin-left: 10px; }
+
+.headShotImg {
+  width: 200px;
+  height: 200px;
+  border-radius: 100%;
+  border: 3px solid #FC5749; }
+
+.aboutBodyContainer {
+  width: 40%;
+  margin-right: 20px; }
+
+.aboutBodyText {
+  font-size: 1.1em; }
+
+.iconsList {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-flex-wrap: wrap;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+  width: 100%;
+  padding: 0px; }
+
+.iconTitle {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  text-align: center; }
+
+.icons {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center; }
+
+.skillsIcon {
+  width: 100px;
+  height: 100px;
+  margin: 5px; }
+
+.previousWorkTitle {
+  margin-left: 10px; }
+
 .siteFooter {
   display: -webkit-box;
   display: -webkit-flex;
@@ -185,7 +292,11 @@ a:visited {
     transform: scale(1);
     opacity: 1; } }
 
-@media (max-width: 600px) {
+@media (max-width: 1000px) {
+  .aboutBodyContainer {
+    width: 60%; } }
+
+@media (max-width: 500px) {
   .headerBackground {
     background-position: right; }
   .headerTitle {
@@ -213,4 +324,34 @@ a:visited {
     height: 65px;
     margin-top: 10px; }
   .mobNavBtn:hover {
-    cursor: pointer; } }
+    cursor: pointer; }
+  .aboutContainer {
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -webkit-flex-direction: column;
+    -ms-flex-direction: column;
+    flex-direction: column; }
+  .aboutHeaderContainer {
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -webkit-flex-direction: column;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    text-align: center;
+    margin-top: 0px; }
+  .headShotImg {
+    width: 100%;
+    height: auto;
+    border-radius: 0%;
+    border: none; }
+  .aboutBodyContainer {
+    width: 85%;
+    margin-right: 0px; } }

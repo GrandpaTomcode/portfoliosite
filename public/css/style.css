@@ -198,7 +198,7 @@ a:visited {
 .headShotImg {
   width: 200px;
   height: 200px;
-  border-radius: 100%;
+  border-radius: 4%;
   border: 3px solid #FC5749; }
 
 .aboutBodyContainer {

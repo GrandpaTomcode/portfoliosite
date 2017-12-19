@@ -3,7 +3,6 @@ const nodemailer = require('nodemailer')
 const bodyParser = require('body-parser');
 const fs = require('fs')
 const path = require('path');
-const validator = require('express-validator')
 const submit = require('./sendEmail.js').submit;
 const app = express();
 let deps = {}
@@ -17,20 +16,10 @@ try {
 
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(express.static(path.join(__dirname, '../public')));
-app.use(validator())
 
 app.post('/submit', (req, res) => {
-    req.checkBody('leader_email', "Enter a valid email address.").isEmail().withMessage('must be an email')
-    let error = req.validationErrors()
-    if (error) {
-        console.log(error)
-        return
-    } else {
-        deps.config = config
-        submit(req, res, deps)
-    }
-
-
+    deps.config = config
+    submit(req, res, deps)
 })
 
 app.listen(9000, () => {

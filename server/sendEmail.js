@@ -1,4 +1,9 @@
 submit = (req, res, deps) => {
+  // check that .contactInformation exists in the .params object
+    console.log(req.body.params || req.body)
+    let Body = req.body.params.contactInformation
+    Body = JSON.parse(Body)
+    console.log(Body)
     const nodemailer = require('nodemailer');
     const config = deps.config
     const smtpTransport = nodemailer.createTransport({
@@ -9,13 +14,13 @@ submit = (req, res, deps) => {
 
     const mailOptions = {
         to: config.toAddress,
-        subject: req.body.subject,
-        email: req.body.email,
-        html: '<b>Name: </b> ' + '<br>' + req.body.name +
+        subject: Body.subject,
+        email: Body.email,
+        html: '<b>Name: </b> ' + '<br>' + Body.name +
             '<br>'
-            + '<b>Email: </b> ' + '<br>' + req.body.email +
+            + '<b>Email: </b> ' + '<br>' + Body.email +
             '<br>'
-            + '<b>Message: </b> ' + '<br>' + req.body.message
+            + '<b>Message: </b> ' + '<br>' + Body.message
 
     }
     console.log(mailOptions)

@@ -18,6 +18,7 @@
     },
     "homepage": "https://github.com/tomOneEightTwo/portfoliosite#readme",
     "dependencies": {
+        "axios": "^0.17.1",
         "express": "^4.16.2",
         "express-validator": "^4.3.0",
         "nodemailer": "^4.4.1"

@@ -242,9 +242,8 @@ a:visited {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -webkit-box-pack: center;
-  -ms-flex-pack: center;
-  justify-content: center;
+  -ms-flex-pack: distribute;
+  justify-content: space-around;
   -webkit-box-align: center;
   -ms-flex-align: center;
   align-items: center;
@@ -383,6 +382,12 @@ a:visited {
   -webkit-transform: scale(1.15);
   -ms-transform: scale(1.15);
   transform: scale(1.15); }
+
+.invalidEmail {
+  display: none; }
+
+.showInvalid {
+  display: block; }
 
 .siteFooter {
   display: -webkit-box;

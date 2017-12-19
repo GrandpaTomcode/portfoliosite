@@ -183,26 +183,28 @@
 		</ul>
 	</div>
 	<div class="contactFormContainer">
-		<form action="papasodiepop.me/submit" class="contactForm" method="post">
+		<form class="contactForm">
 			<h2>Work With Me</h2>
 			<div class="formTitleInput">
-				<h3>Name:</h3>
-				<input class="inputField" name="name" type="text" value="">
+
+				<h3>Name: *</h3>
+				<input class="inputField" id="name" name="name" type="text" value="">
 			</div>
 			<div class="formTitleInput">
-				<h3>Subject:</h3>
-				<input class="inputField" name="subject" type="text" value="">
+				<h3>Subject: *</h3>
+				<input class="inputField" id="subject" name="subject" type="text" value="">
 			</div>
 			<div class="formTitleInput">
-				<h3>Email:</h3>
-				<input class="inputField" name="email" type="text" value="">
+				<h4 class="invalidEmail">Enter a valid email!</h4>
+				<h3>Email: *</h3>
+				<input class="inputField" id="email" name="email" type="text" value="">
 			</div>
 			<div class="formTitleInput">
-				<h3>Enquery:</h3>
-				<textarea name="message" class="inputField textAreaInput"></textarea>
+				<h3>Enquiry: *</h3>
+				<textarea name="message" id="message" class="inputField textAreaInput"></textarea>
 			</div>
 			<div class="submitBtnContainer">
-				<button class="submitBtn" name="button" type="submit">Send</button>
+				<button class="submitBtn" id="submitButton" name="button" type="button">Send</button>
 			</div>
 		</form>
 		<div class="followMeContainer">
@@ -239,8 +241,8 @@
 			</ul>
 		</div>
 	</div>
-	<script src="js/main.js" type="text/javascript">
-	</script>
+	<script src="js/main.js" type="text/javascript"></script>
+	<script src="https://unpkg.com/axios/dist/axios.min.js"></script>
 	<footer class="siteFooter">
 		<span>Created By Tom - &copy; 2016 -
 			<script type="text/javascript">

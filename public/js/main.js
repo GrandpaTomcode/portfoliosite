@@ -77,7 +77,7 @@ submitBtn.addEventListener("click", function (event) {
     }
     console.log(name, subject, email, message)
     if (inputValid.length >= 3) {
-        let data = { Name: name, Subject: subject, Email: email, Message: message }
+        let data = { name, subject, email, message }
         try {
             data = JSON.stringify(data)
         } catch (err) {
@@ -87,24 +87,25 @@ submitBtn.addEventListener("click", function (event) {
         axios
             .post('http://localhost:9000/submit', {
                 params: {
-                    contactInformation: data
+                    contactInformation: data,
                 },
             })
             .then(function (response) {
-                console.log(response)
+                console.log(response);
                 if (response) {
-                    console.log(response)
+
+                    console.log(response);
+                    $('.modalContainer').fadeIn(200);
                 }
             })
             .catch(function (error) {
                 console.log(
                     'An error occured while attempting to send the contact information to the server: ' +
                     error
-                )
-            })
+                );
+            });
     } else {
-        console.log(inputValid)
-        console.log('one or more parameters in the form are invalid')
+        console.log(inputValid);
+        console.log('one or more parameters in the form are invalid');
     }
 })
-

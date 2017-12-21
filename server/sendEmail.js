@@ -1,11 +1,13 @@
 submit = (req, res, deps) => {
-  // check that .contactInformation exists in the .params object
-    console.log(req.body.params || req.body)
+  // check that .contactInformation exists in the .params object)
+
+    console.log(req.body.params.contactInformation)
     let Body = req.body.params.contactInformation
     Body = JSON.parse(Body)
     console.log(Body)
     const nodemailer = require('nodemailer');
     const config = deps.config
+    
     const smtpTransport = nodemailer.createTransport({
         service: 'gmail',
         host: 'smtp.gmail.com',

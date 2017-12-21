@@ -63,8 +63,7 @@ a:visited {
   height: 100%;
   background-image: url(../images/landscape.jpg);
   background-size: cover;
-  background-position: center;
-  border-bottom: 4px solid #FC5749; }
+  background-position: center; }
 
 .header {
   display: -webkit-box;

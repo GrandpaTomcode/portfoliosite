@@ -93,15 +93,26 @@ submitBtn.addEventListener("click", function(event) {
           Email: email,
           Message: message
         }
-      })
-      .then(function(response) {
-        console.log(response);
-      })
-      .catch(function(error) {
-        console.log(error);
-      });
-  } else {
-    console.log(inputValid);
-    console.log("one or more parameters in the form are invalid");
-  }
-});
+        event.preventDefault()
+        axios.get('/submit', {
+                params: {
+                    data
+                }
+            })
+            .then(function (response) {
+                console.log(response);
+                if (response) {
+                    console.log(response);
+                }
+            })
+            .catch(function (error) {
+                console.log(
+                    'An error occured while attempting to send the contact information to the server: ' +
+                    error
+                );
+            });
+    } else {
+        console.log(inputValid);
+        console.log('one or more parameters in the form are invalid');
+    }
+})

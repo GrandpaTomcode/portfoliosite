@@ -59,6 +59,10 @@ submitBtn.addEventListener("click", function(event) {
     const invalidEmail = document.getElementById("invalidEmail");
     $(".invalidEmail").addClass("showInvalid");
   }
+  if (nameValid !== true) {
+    const invalidEmail = document.getElementById("invalidEmail");
+    $(".invalidEmail").addClass("showInvalid");
+  }
 
   const inputValid = [];
   if (nameValid) {

@@ -1,7 +1,7 @@
 submit = (req, res, deps) => {
   console.log(req.body);
   let Body = req.query;
-  //Body = JSON.parse(Body);
+  Body = JSON.parse(Body.data)
   console.log(Body);
   const nodemailer = require("nodemailer");
   const config = deps.config;
@@ -37,7 +37,7 @@ submit = (req, res, deps) => {
       res.end("Error");
     } else {
       console.log("message sent: " + res.mailOptions);
-      res.redirect(req.get("referer"));
+      res.redirect(req.originalUrl())
     }
   });
 };

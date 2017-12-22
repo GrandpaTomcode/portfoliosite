@@ -77,42 +77,26 @@ submitBtn.addEventListener("click", function(event) {
 
   console.log(name, subject, email, message);
   if (inputValid.length >= 3) {
-    // let data = { name, subject, email, message };
-    // try {
-    //   data = JSON.stringify(data);
-    // } catch (err) {
-    //   console.log(err);
-    // }
     console.log({ name, subject, email, message });
+    event.preventDefault();
+
     event.preventDefault();
     axios
       .get("/submit", {
         params: {
-          Name: name,
-          Subject: subject,
-          Email: email,
-          Message: message
+          data
         }
-        event.preventDefault()
-        axios.get('/submit', {
-                params: {
-                    data
-                }
-            })
-            .then(function (response) {
-                console.log(response);
-                if (response) {
-                    console.log(response);
-                }
-            })
-            .catch(function (error) {
-                console.log(
-                    'An error occured while attempting to send the contact information to the server: ' +
-                    error
-                );
-            });
-    } else {
-        console.log(inputValid);
-        console.log('one or more parameters in the form are invalid');
-    }
-})
+      })
+      .then(function(response) {
+        if (response) {
+          console.log(response);
+        }
+      })
+      .catch(function(error) {
+        console.log(
+          "An error occured while attempting to send the contact information to the server: " +
+            error
+        );
+      });
+  }
+});

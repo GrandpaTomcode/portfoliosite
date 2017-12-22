@@ -1,6 +1,5 @@
 $(document).ready(function() {
   // mobile nav toggle
-
   $(".mobNavBtn").click(function() {
     $(".mobNav").slideToggle("fast");
   });
@@ -110,9 +109,8 @@ submitBtn.addEventListener("click", function(event) {
                     'An error occured while attempting to send the contact information to the server: ' +
                     error
                 );
-            });
-    } else {
+            })
+    } else{
         console.log(inputValid);
         console.log('one or more parameters in the form are invalid');
     }
-})

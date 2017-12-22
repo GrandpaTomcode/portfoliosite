@@ -76,12 +76,6 @@ submitBtn.addEventListener("click", function(event) {
 
   console.log(name, subject, email, message);
   if (inputValid.length >= 3) {
-    // let data = { name, subject, email, message };
-    // try {
-    //   data = JSON.stringify(data);
-    // } catch (err) {
-    //   console.log(err);
-    // }
     console.log({ name, subject, email, message });
     event.preventDefault();
     let data = { Name: name, Subject: subject, Email: email, Message: message };

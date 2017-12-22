@@ -1,7 +1,7 @@
 
 submit = (req, res, deps) => {
-    console.log(req.body.params.data)
-    let Body = req.body.params.data
+    console.log(req.body.data)
+    let Body = req.body.data
     Body = JSON.parse(Body)
     console.log(Body)
     const nodemailer = require('nodemailer');

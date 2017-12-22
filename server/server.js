@@ -17,7 +17,7 @@ try {
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(express.static(path.join(__dirname, '../public')));
 
-app.post('/submit', (req, res) => {
+app.get('/submit', (req, res) => {
     deps.config = config
     submit(req, res, deps)
 })

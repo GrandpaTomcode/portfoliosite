@@ -86,7 +86,7 @@ submitBtn.addEventListener("click", function (event) {
             console.log(err)
         }
         event.preventDefault()
-        axios.post('/submit', {
+        axios.get('/submit', {
                 params: {
                     data
                 }

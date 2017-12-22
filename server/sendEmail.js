@@ -1,39 +1,45 @@
-
 submit = (req, res, deps) => {
-    console.log(req.body.params.data)
-    let Body = req.body.params.data
-    Body = JSON.parse(Body)
-    console.log(Body)
-    const nodemailer = require('nodemailer');
-    const config = deps.config
+  console.log(req.body);
+  let Body = req.query;
+  //Body = JSON.parse(Body);
+  console.log(Body);
+  const nodemailer = require("nodemailer");
+  const config = deps.config;
 
-    const smtpTransport = nodemailer.createTransport({
-        service: 'gmail',
-        host: 'smtp.gmail.com',
-        auth: config
-    })
+  const smtpTransport = nodemailer.createTransport({
+    service: "gmail",
+    host: "smtp.gmail.com",
+    auth: config
+  });
 
-    const mailOptions = {
-        to: config.toAddress,
-        subject: Body.subject,
-        email: Body.email,
-        html: '<b>Name: </b> ' + '<br>' + Body.name +
-            '<br>'
-            + '<b>Email: </b> ' + '<br>' + Body.email +
-            '<br>'
-            + '<b>Message: </b> ' + '<br>' + Body.message
+  const mailOptions = {
+    to: config.toAddress,
+    subject: Body.Subject,
+    email: Body.Email,
+    html:
+      "<b>Name: </b> " +
+      "<br>" +
+      Body.Name +
+      "<br>" +
+      "<b>Email: </b> " +
+      "<br>" +
+      Body.Email +
+      "<br>" +
+      "<b>Message: </b> " +
+      "<br>" +
+      Body.Message
+  };
+
+  console.log(mailOptions);
+  smtpTransport.sendMail(mailOptions, (err, res) => {
+    if (err) {
+      console.log(err);
+      res.end("Error");
+    } else {
+      console.log("message sent: " + res.mailOptions);
+      res.redirect(req.get("referer"));
     }
+  });
+};
 
-    console.log(mailOptions)
-    smtpTransport.sendMail(mailOptions, (err, res) => {
-        if (err) {
-            console.log(err)
-            res.end('Error')
-        } else {
-            console.log('message sent: ' + res.mailOptions)
-            res.redirect(req.get('referer'))
-        }
-    })
-}
-
-exports.submit = submit
+exports.submit = submit;

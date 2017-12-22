@@ -79,7 +79,7 @@ submitBtn.addEventListener("click", function(event) {
   if (inputValid.length >= 3) {
     console.log({ name, subject, email, message });
     event.preventDefault();
-
+    let data = { Name: name, Subject: subject, Email: email, Message: message };
     event.preventDefault();
     axios
       .get("/submit", {

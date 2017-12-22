@@ -1,13 +1,12 @@
-submit = (req, res, deps) => {
-  // check that .contactInformation exists in the .params object)
 
-    console.log(req.body.params.contactInformation)
-    let Body = req.body.params.contactInformation
+submit = (req, res, deps) => {
+    console.log(req.body.params.data)
+    let Body = req.body.params.data
     Body = JSON.parse(Body)
     console.log(Body)
     const nodemailer = require('nodemailer');
     const config = deps.config
-    
+
     const smtpTransport = nodemailer.createTransport({
         service: 'gmail',
         host: 'smtp.gmail.com',
@@ -23,8 +22,8 @@ submit = (req, res, deps) => {
             + '<b>Email: </b> ' + '<br>' + Body.email +
             '<br>'
             + '<b>Message: </b> ' + '<br>' + Body.message
-
     }
+
     console.log(mailOptions)
     smtpTransport.sendMail(mailOptions, (err, res) => {
         if (err) {
@@ -34,9 +33,7 @@ submit = (req, res, deps) => {
             console.log('message sent: ' + res.mailOptions)
             res.redirect(req.get('referer'))
         }
-
     })
-
 }
 
 exports.submit = submit

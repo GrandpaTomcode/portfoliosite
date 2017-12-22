@@ -62,12 +62,13 @@ submitBtn.addEventListener("click", function (event) {
         const invalidEmail = document.getElementById("invalidEmail")
         $('.invalidEmail').addClass('showInvalid')
     }
+
     const inputValid = []
-    if (emailValid) {
-        inputValid.push(emailValid)
-    }
     if (nameValid) {
         inputValid.push(nameValid)
+    }
+    if (emailValid) {
+        inputValid.push(emailValid)
     }
     if (subjectValid) {
         inputValid.push(subjectValid)
@@ -75,6 +76,7 @@ submitBtn.addEventListener("click", function (event) {
     if (messageValid) {
         inputValid.push(messageValid)
     }
+
     console.log(name, subject, email, message)
     if (inputValid.length >= 3) {
         let data = { name, subject, email, message }
@@ -84,18 +86,15 @@ submitBtn.addEventListener("click", function (event) {
             console.log(err)
         }
         event.preventDefault()
-        axios
-            .post('http://localhost:9000/submit', {
+        axios.post('/submit', {
                 params: {
-                    contactInformation: data,
-                },
+                    data
+                }
             })
             .then(function (response) {
                 console.log(response);
                 if (response) {
-
                     console.log(response);
-                    $('.modalContainer').fadeIn(200);
                 }
             })
             .catch(function (error) {

@@ -34,6 +34,9 @@ $(document).ready(function () {
       500
     );
   });
+  $(".sentEmailModalBtn").click(() => {
+      location.reload()
+  })
 });
 
 const submitBtn = document.getElementById("submitButton");
@@ -85,7 +88,7 @@ submitBtn.addEventListener("click", function (event) {
     let data = { Name: name, Subject: subject, Email: email, Message: message };
     event.preventDefault();
     axios
-      .get("http://localhost:9000/submit", {
+      .get("/submit", {
         params: {
           data
         }
@@ -94,7 +97,7 @@ submitBtn.addEventListener("click", function (event) {
         if (response) {
           console.log("the email has been sent")
           console.log(response)
-          location.reload()
+          $(".sentEmailModalContainer").fadeIn(200)
         }
       })
       .catch(function (error) {

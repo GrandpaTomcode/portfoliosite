@@ -1,11 +1,11 @@
 $(document).ready(function () {
+
   // mobile nav toggle
   $(".mobNavBtn").click(function () {
     $(".mobNav").slideToggle("fast");
   });
 
   // mobile Nav close
-
   $(".mobNav").click(function () {
     $(".mobNav").slideUp("fast");
   });
@@ -18,6 +18,7 @@ $(document).ready(function () {
       500
     );
   });
+  
   $(".myWorkBtn").click(function () {
     $("html, body").animate(
       {
@@ -52,6 +53,7 @@ submitBtn.addEventListener("click", function (event) {
   const subject = document.getElementById("subject").value;
   const email = document.getElementById("email").value;
   const message = document.getElementById("message").value;
+
   // Validation
   const emailValid = emailValidation.test(email);
   const nameValid = inputValidation(name);
@@ -81,9 +83,8 @@ submitBtn.addEventListener("click", function (event) {
     inputValid.push(messageValid);
   }
 
-  //console.log(name, subject, email, message);
+
   if (inputValid.length >= 3) {
-    // console.log({ name, subject, email, message });
     event.preventDefault();
     let data = { Name: name, Subject: subject, Email: email, Message: message };
     event.preventDefault();

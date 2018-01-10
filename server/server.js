@@ -17,6 +17,7 @@ try {
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(express.static(path.join(__dirname, "../public")));
 
+
 app.get("/submit", (req, res) => {
   deps.config = config;
   console.log(req.query.data)
@@ -25,8 +26,11 @@ app.get("/submit", (req, res) => {
   }).catch(e => { console.log(e) })
 });
 
+app.get("/blog", (req, res) => {
+  app.use(express.static(path.join(__dirname, "../blog")))
+  res.sendFile(path.join(__dirname, '../blog/blog.html'))
 
-
+})
 // - Server listening
 app.listen(9000, () => {
   console.log("[ya boi is listening on port 9000]");

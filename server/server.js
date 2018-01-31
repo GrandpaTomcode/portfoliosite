@@ -1,6 +1,7 @@
 const express = require("express")
 const nodemailer = require("nodemailer")
 const bodyParser = require("body-parser")
+const https = require('https')
 const fs = require("fs")
 const path = require("path")
 const submit = require("./sendEmail.js").submit;
@@ -33,6 +34,12 @@ app.get("/blog", (req, res) => {
 
 })
 // - Server listening
+const options = {
+    cert: fs.readFileSync('/etc/letsencrypt/live/papasodiepop.me/fullchain.pem'),
+    key: fs.readFileSync('/etc/letsencrypt/live/papasodiepop.me/privkey.pem')
+}
+
 app.listen(8080, () => {
   console.log("[ya boi is listening on port 8080]");
 });
+https.createServer(options, app).listen(8443)

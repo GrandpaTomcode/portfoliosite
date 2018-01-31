@@ -39,7 +39,5 @@ const options = {
     key: fs.readFileSync('/etc/letsencrypt/live/papasodiepop.me/privkey.pem')
 }
 
-app.listen(8080, () => {
-  console.log("[ya boi is listening on port 8080]");
-});
+app.listen(8080)
 https.createServer(options, app).listen(8443)

@@ -8,6 +8,7 @@ submit = (req, res, deps) => {
 
     const smtpTransport = nodemailer.createTransport({
       service: "gmail",
+      secure: true,
       host: "smtp.gmail.com",
       auth: config
     });

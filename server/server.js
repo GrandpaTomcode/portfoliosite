@@ -27,7 +27,7 @@ app.get("/submit", (req, res) => {
   }).catch(e => { console.log(e) })
 });
 
-app.get('/health-check', (req, res) => res.sendStatus(200));
+
 app.get("/blog", (req, res) => {
   app.use(express.static(path.join(__dirname, "../blog")))
   res.sendFile(path.join(__dirname, '../blog/blog.html'))

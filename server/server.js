@@ -38,6 +38,6 @@ const options = {
     cert: fs.readFileSync('/etc/letsencrypt/live/papasodiepop.me/fullchain.pem'),
     key: fs.readFileSync('/etc/letsencrypt/live/papasodiepop.me/privkey.pem')
 }
-
+app.use(require('helmet')());
 app.listen(8080)
 https.createServer(options, app).listen(8443)

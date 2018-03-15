@@ -20,6 +20,7 @@ app.use(bodyParser.urlencoded({ extended: true }));
 app.use(express.static(path.join(__dirname, "../public")));
 
 
+
 app.get("/submit", (req, res) => {
   deps.config = config;
   console.log(req.query.data)
@@ -37,7 +38,7 @@ app.get("/blog", (req, res) => {
 
 app.get("/personalHomepage", (req, res) => {
     app.use(express.static(path.join(__dirname, "../personalHomepage")))
-    res.sendFile(path.join(__dirname, '../personalHomepage/index.html'))
+    res.sendFile(path.join(__dirname, 'index.html'))
 })
 // - Server listening
 const options = {

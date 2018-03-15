@@ -37,7 +37,7 @@ app.get("/blog", (req, res) => {
 
 app.get("/personalHomepage", (req, res => {
     app.use(express.static(path.join(__dirname, "../personalHomepage")))
-    res.sendFile(path.join(__dirname, '../personalHomepage/index.htmls'))
+    res.sendFile(path.join(__dirname, '../personalHomepage/index.html'))
 }))
 // - Server listening
 const options = {

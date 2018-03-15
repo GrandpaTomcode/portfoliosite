@@ -34,6 +34,11 @@ app.get("/blog", (req, res) => {
   res.sendFile(path.join(__dirname, '../blog/blog.html'))
 
 })
+
+app.get("/personalHomepage", (req, res => {
+    app.use(express.static(path.join(__dirname, "../personalHomepage")))
+    res.sendFile(path.join(__dirname, '../personalHomepage/index.htmls'))
+}))
 // - Server listening
 const options = {
     cert: fs.readFileSync('/etc/letsencrypt/live/papasodiepop.me/fullchain.pem'),

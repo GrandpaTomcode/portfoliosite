@@ -29,11 +29,14 @@ app.get("/submit", (req, res) => {
   }).catch(e => { console.log(e) })
 });
 
-
 app.get("/blog", (req, res) => {
   app.use(express.static(path.join(__dirname, "../blog")))
   res.sendFile(path.join(__dirname, '../blog/blog.html'))
 
+})
+app.get("/sitemap", (req, res) => {
+console.log(__dirname)
+  res.sendFile(path.join(__dirname, '/sitemap.html'))
 })
 
 app.get("/personalHomepage", (req, res) => {
@@ -41,7 +44,7 @@ app.get("/personalHomepage", (req, res) => {
   res.sendFile(path.join(__dirname, '../personalHomepage/index.html'))
 
 })
-// - Server listening
+// Server listening
 const options = {
     cert: fs.readFileSync('/etc/letsencrypt/live/papasodiepop.me/fullchain.pem'),
     key: fs.readFileSync('/etc/letsencrypt/live/papasodiepop.me/privkey.pem')

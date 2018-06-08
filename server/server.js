@@ -6,15 +6,10 @@ const fs = require("fs")
 const helmet = require("helmet")
 const path = require("path")
 const submit = require("./sendEmail.js").submit;
+const config = require("./config.json")
 const app = express()
 
 let deps = {}
-let config
-try {
-  config = JSON.parse(fs.readFileSync("config.json", "utf-8"));
-} catch (e) {
-  console.log(e);
-}
 
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(express.static(path.join(__dirname, "../public")));
@@ -45,10 +40,12 @@ app.get("/personalHomepage", (req, res) => {
 
 })
 // Server listening
-const options = {
+let options;
+if (!config.production){
+   options = {
     cert: fs.readFileSync('/etc/letsencrypt/live/papasodiepop.me/fullchain.pem'),
     key: fs.readFileSync('/etc/letsencrypt/live/papasodiepop.me/privkey.pem')
-}
+}}
 app.use(require('helmet')());
-app.listen(8080)
-https.createServer(options, app).listen(443)
+app.listen(8080, () => console.log("started the server on port 8080"))
+if(!config.production) https.createServer(options, app).listen(443)
